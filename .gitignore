@@ -55,3 +55,6 @@ next-env.d.ts
 # IDE/editor
 .vscode/
 .idea/
+
+# OpenNext
+.open-next
