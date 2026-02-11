@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override any conflicting Tailwind styles for exact replica */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--dark-1);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Ensure template styles take precedence */
+.loading-screen,
+.ambient-bg,
+.grid-overlay,
+.container,
+.header,
+.menu-grid,
+.menu-item,
+.content-section {
+  /* All template styles will be preserved from GEUWAT.css */
+}
