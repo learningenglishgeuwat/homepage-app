@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface TestimonialsProps {
   backToMenu: () => void
@@ -98,7 +99,7 @@ export default function Testimonials({ backToMenu, isActive }: TestimonialsProps
           <div key={index} className="testimonial-card">
             <div className="testimonial-author">
               <div className="author-avatar">
-                <img src={testimonial.avatar} alt={testimonial.name} />
+                <Image src={testimonial.avatar} alt={testimonial.name} width={80} height={80} />
               </div>
               <div className="author-info">
                 <h4>{testimonial.name}</h4>
@@ -110,7 +111,7 @@ export default function Testimonials({ backToMenu, isActive }: TestimonialsProps
                 <span key={i} className="star">★</span>
               ))}
             </div>
-            <p className="testimonial-content">"{testimonial.content}"</p>
+            <p className="testimonial-content">&quot;{testimonial.content}&quot;</p>
           </div>
         ))}
       </div>

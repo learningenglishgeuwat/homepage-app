@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 interface MenuGridProps {
   showSection: (sectionId: string) => void
@@ -82,10 +83,12 @@ const menuItems: MenuItem[] = [
   {
     id: '5',
     badge: (
-      <img
+      <Image
         src="/learning_english_geuwat_rb_3d.png"
         alt="GEUWAT"
         className="menu-badge-icon"
+        width={64}
+        height={64}
       />
     ),
     title: 'Tentang',

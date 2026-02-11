@@ -26,7 +26,7 @@ export async function registerUser(userData: {
     window.open(whatsappUrl, '_blank')
     
     return { success: true }
-  } catch (error) {
+  } catch {
     return { success: false, error: 'Gagal mengirim pesan WhatsApp' }
   }
 }

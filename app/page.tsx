@@ -20,13 +20,6 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(storageKey)
-    if (saved) {
-      setActiveSection(saved)
-    }
-  }, [])
-
-  useEffect(() => {
     if (activeSection) {
       window.localStorage.setItem(storageKey, activeSection)
     } else {

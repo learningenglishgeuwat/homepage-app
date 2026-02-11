@@ -22,7 +22,7 @@ export default function Introduction({ backToMenu, isActive }: IntroductionProps
       <div className="intro-hero">
         <div className="intro-hero-content">
           
-          <h1 className="intro-headline">Intinya GEUWAT, menjadi variabel<br/><span>dalam takdirmu, that's simple</span></h1>
+          <h1 className="intro-headline">Intinya GEUWAT, menjadi variabel<br/><span>dalam takdirmu, that&apos;s simple</span></h1>
           <p className="intro-subtext">Platform khusus dengan jalur pengucapan, kosakata, tata bahasa, speaking, pelacakan progres serta learning path terarah.</p>
           <div className="tab-buttons">
             <button

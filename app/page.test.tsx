@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import Home from './page'
@@ -85,4 +86,3 @@ describe('Home page navigation', () => {
     expect(screen.getByTestId('about-section')).toHaveTextContent('active')
   })
 })
-
