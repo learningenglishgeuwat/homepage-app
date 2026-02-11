@@ -77,12 +77,12 @@ describe('Home page navigation', () => {
     expect(screen.getByTestId('header')).toBeInTheDocument()
   })
 
-  it('restores last active section from localStorage', () => {
+  it('starts from menu even when localStorage has previous section', () => {
     window.localStorage.setItem('homepage_active_section', 'about')
 
     render(<Home />)
 
-    expect(screen.queryByTestId('menu-grid')).not.toBeInTheDocument()
-    expect(screen.getByTestId('about-section')).toHaveTextContent('active')
+    expect(screen.getByTestId('menu-grid')).toBeInTheDocument()
+    expect(screen.getByTestId('about-section')).toHaveTextContent('inactive')
   })
 })

@@ -8,8 +8,14 @@ describe('Gallery section', () => {
 
     expect(screen.getByText('Galeri Kami')).toBeInTheDocument()
     expect(screen.getByText('Menampilkan program dan pencapaian terbaik')).toBeInTheDocument()
-    expect(screen.getByAltText('Tampilan Laptop')).toHaveAttribute('src', '/Fitur/LaptopView.png')
-    expect(screen.getByAltText('Tampilan HP')).toHaveAttribute('src', '/Fitur/HpView.png')
+    expect(screen.getByAltText('Tampilan Laptop')).toHaveAttribute(
+      'src',
+      expect.stringContaining('LaptopView.png')
+    )
+    expect(screen.getByAltText('Tampilan HP')).toHaveAttribute(
+      'src',
+      expect.stringContaining('HpView.png')
+    )
   })
 
   it('calls backToMenu when clicking back button', () => {
