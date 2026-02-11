@@ -9,12 +9,12 @@ export default function Services({ backToMenu, isActive }: ServicesProps) {
   const [activeTab, setActiveTab] = React.useState<'modul' | 'desain' | 'konsultasi' | 'dukungan'>('modul')
   const [showPronunciationTopics, setShowPronunciationTopics] = React.useState(false)
   const pronunciationTopics = [
-    { title: 'Alphabet', shortDesc: 'The Foundation' },
-    { title: 'Phonetic Symbols', shortDesc: 'IPA Mastery' },
-    { title: 'Stressing', shortDesc: 'Rhythm & Beat' },
-    { title: 'Final Sound', shortDesc: 'Ending Precision' },
-    { title: 'American /t/', shortDesc: 'Flap & Glottal' },
-    { title: 'Connected Speech', shortDesc: 'Flow & Link' },
+    { title: 'Alphabet', shortDesc: 'The Foundation', locked: false },
+    { title: 'Phonetic Symbols', shortDesc: 'IPA Mastery', locked: false },
+    { title: 'Stressing', shortDesc: 'Rhythm & Beat', locked: true },
+    { title: 'Final Sound', shortDesc: 'Ending Precision', locked: true },
+    { title: 'American /t/', shortDesc: 'Flap & Glottal', locked: true },
+    { title: 'Connected Speech', shortDesc: 'Flow & Link', locked: true },
   ]
 
   React.useEffect(() => {
@@ -104,7 +104,7 @@ export default function Services({ backToMenu, isActive }: ServicesProps) {
                     <div className={`services-topic-dropdown${showPronunciationTopics ? ' show' : ''}`}>
                       <ul className="services-topic-list">
                         {pronunciationTopics.map((topic) => (
-                          <li key={topic.title}>
+                          <li key={topic.title} className={topic.locked ? 'locked' : ''}>
                             <span className="topic-title">{topic.title}</span>
                             <span className="topic-desc">{topic.shortDesc}</span>
                           </li>

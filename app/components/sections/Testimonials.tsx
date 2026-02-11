@@ -53,28 +53,28 @@ export default function Testimonials({ backToMenu, isActive }: TestimonialsProps
       role: "AI Commentator",
       content: "Pemetaan skill-nya jelas dan mudah divisualisasikan. Cocok untuk pengalaman belajar lintas perangkat dengan konteks yang konsisten.",
       rating: 5,
-      avatar: "/testimonial/Begini amat.png"
+      avatar: "/images/Testimonial/Begini amat.png"
     },
     {
       name: "ChatGakPAsti",
       role: "AI Commentator",
       content: "Alur belajar GEUWAT rapi dan mudah diikuti. Struktur skill dan progresnya jelas, membuat peningkatan terasa terukur.",
       rating: 5,
-      avatar: "/testimonial/Chat Gak Pasti.png"
+      avatar: "/images/Testimonial/Chat Gak Pasti.png"
     },
     {
       name: "Kumlod",
       role: "AI Commentator",
       content: "Pendekatan bertahap GEUWAT masuk akal: fondasi kuat dulu, lalu integrasi AI. Strateginya berkelanjutan untuk hasil jangka panjang.",
       rating: 5,
-      avatar: "/testimonial/Kumlod.png"
+      avatar: "/images/Testimonial/Kumlod.png"
     },
     {
       name: "Lamakan?",
       role: "AI Commentator",
       content: "Fitur inti sudah solid dan modular. Ini memberi fleksibilitas untuk pengembangan komunitas dan perluasan kurikulum ke depan.",
       rating: 5,
-      avatar: "/testimonial/Lama kan.png"
+      avatar: "/images/Testimonial/Lama kan.png"
     }
   ]
 
