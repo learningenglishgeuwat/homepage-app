@@ -7,11 +7,18 @@ type BrowserNotificationPermission =
   | 'unsupported'
 
 export default function NotificationPrompt() {
+  const dismissStorageKey = 'homepage_notification_prompt_dismissed'
   const [permission, setPermission] =
     useState<BrowserNotificationPermission>('default')
   const [isRequesting, setIsRequesting] = useState(false)
+  const [isDismissed, setIsDismissed] = useState(false)
 
   useEffect(() => {
+    const hasDismissed = window.localStorage.getItem(dismissStorageKey) === '1'
+    if (hasDismissed) {
+      setIsDismissed(true)
+    }
+
     if (!('Notification' in window)) {
       setPermission('unsupported')
       return
@@ -38,7 +45,12 @@ export default function NotificationPrompt() {
     }
   }
 
-  if (permission === 'granted') {
+  const dismissPrompt = () => {
+    window.localStorage.setItem(dismissStorageKey, '1')
+    setIsDismissed(true)
+  }
+
+  if (permission === 'granted' || isDismissed) {
     return null
   }
 
@@ -50,18 +62,28 @@ export default function NotificationPrompt() {
           ? 'Browser ini belum mendukung notifikasi web.'
           : permission === 'denied'
             ? 'Izin notifikasi ditolak. Buka pengaturan browser untuk mengaktifkan kembali.'
-            : 'Nyalakan notifikasi untuk menerima info update terbaru.'}
+            : 'Notifikasi bersifat opsional. Aktifkan jika ingin menerima update terbaru.'}
       </p>
-      {permission !== 'unsupported' && (
+      <div className="notification-prompt__actions">
+        {permission !== 'unsupported' && (
+          <button
+            className="notification-prompt__button"
+            type="button"
+            onClick={requestPermission}
+            disabled={isRequesting}
+          >
+            {isRequesting ? 'Meminta izin...' : 'Izinkan notifikasi'}
+          </button>
+        )}
         <button
-          className="notification-prompt__button"
+          className="notification-prompt__button notification-prompt__button--secondary"
           type="button"
-          onClick={requestPermission}
+          onClick={dismissPrompt}
           disabled={isRequesting}
         >
-          {isRequesting ? 'Meminta izin...' : 'Izinkan notifikasi'}
+          Nanti saja
         </button>
-      )}
+      </div>
     </section>
   )
 }

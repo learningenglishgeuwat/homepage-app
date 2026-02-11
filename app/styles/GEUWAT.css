@@ -2212,6 +2212,11 @@ body {
 	margin-bottom: 12px;
 }
 
+.notification-prompt__actions {
+	display: grid;
+	gap: 8px;
+}
+
 .notification-prompt__button {
 	width: 100%;
 	padding: 10px 14px;
@@ -2234,6 +2239,17 @@ body {
 .notification-prompt__button:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
+}
+
+.notification-prompt__button--secondary {
+	border-color: rgba(255, 255, 255, 0.22);
+	background: rgba(255, 255, 255, 0.02);
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.notification-prompt__button--secondary:hover {
+	background: rgba(255, 255, 255, 0.08);
+	box-shadow: none;
 }
 
 @media (max-width: 768px) {
